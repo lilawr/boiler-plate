@@ -1,0 +1,27 @@
+@import "styles/base.scss";
+
+$title-height: 3rem;
+$title-height-small: 2rem;
+
+.TitleBar {
+    font-size: $title-height;
+    height: $title-height + 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    user-select: none;
+    @include sm {
+          font-size: $title-height-small;
+          height: $title-height-small + 1rem;
+    }
+
+    .TitleBarLogo {
+      height: $title-height;
+      @include sm {
+          height: $title-height-small;
+      }
+    }
+
+}
+

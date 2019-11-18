@@ -1,0 +1,27 @@
+@import "styles/base.scss";
+
+@function f($frame) {
+  @return percentage( $frame / $totalframes )
+}
+
+
+$seconds: 20;
+$framerate: 20;
+$totalframes: $seconds * $framerate;
+
+
+@keyframes rgb {
+  #{f(0)} { color: blue; }
+  #{f(30)} { color: gray; }
+  #{f(60)} { color: lightgray; }
+  #{f($totalframes)} { color: white; }
+}
+
+
+.letterStyleAnimate {
+    animation: rgb infinite 5s linear;
+    @include delay-children();
+}
+
+.letterStyle {
+}

@@ -1,0 +1,23 @@
+.submit-default {
+    width: 100px;
+    margin: $space-med;
+    font-size: 1rem;
+    display: flex;
+    padding: $space-base;
+    text-transform: uppercase;
+    justify-content: center;
+    font-weight: 500;
+    border: solid 1px white;
+    color: white;
+    background: transparent;
+    @include sm {
+       padding: $space-base;
+       margin: $space-base;
+       font-size: 0.9rem;
+    }
+
+    &:hover {
+        background: $transparent-grey;
+        cursor: pointer;
+    }
+}

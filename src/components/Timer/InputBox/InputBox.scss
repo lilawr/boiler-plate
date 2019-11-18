@@ -1,0 +1,55 @@
+@import "styles/base.scss";
+.input-box {
+   display: flex;
+   flex: 1;
+   flex-direction: column;
+   width: 100%;
+}
+
+.reply {
+    background: rgba(213, 213, 230, 0.2);
+    margin-right: auto;
+    cursor: default;
+    user-select: none;
+}
+
+.input {
+    background: rgba(213,213,213,0.1);
+    margin-left: auto;
+}
+
+.submit-box {
+    display: flex;
+    align-items: stretch;
+    padding: $space-x-large $space-med;
+    background: rgba(213,213,213,0.1);
+    @include md {
+       padding: $space-med $space-base;
+    }
+}
+
+.input-text {
+    display:flex;
+    margin: $space-med;
+    flex: 1;
+    font-size: 1rem;
+    padding: $space-base;
+    @include sm {
+       padding: $space-small;
+       margin: $space-base;
+    }
+}
+
+.ScrollBox {
+   display: flex;
+   flex: 1;
+   font-family: monospace;
+   margin: $space-med;
+   padding: $space-x-large;
+   align-items: flex-start;
+   flex-direction: column;
+   @include sm {
+      padding: $space-med;
+      margin: $space-small;
+   }
+}

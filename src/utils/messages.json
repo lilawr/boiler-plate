@@ -1,0 +1,7 @@
+{
+  "welcome": "Welcome To React Training Timer!",
+  "menu": "Enter a task name to start timing",
+  "start": "Beginning tracking your time on task: ",
+  "pause": "Current time total",
+  "stop": "Total time spent: "
+}

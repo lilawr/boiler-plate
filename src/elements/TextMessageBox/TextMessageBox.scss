@@ -1,0 +1,17 @@
+
+@import '~styles/base';
+
+.TextMessageBox {
+    border-radius: 2px;
+    margin-top: $space-small;
+    margin-bottom: $space-small;
+    padding: $space-base $space-med;
+    font-size: 1rem;
+    pointer-events: none;
+    display: block;
+    @include md {
+       font-size: 0.9rem;
+    }
+
+}
+

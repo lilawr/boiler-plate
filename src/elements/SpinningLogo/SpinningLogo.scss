@@ -1,0 +1,38 @@
+@import "styles/base.scss";
+
+@function f($frame) {
+  @return percentage( $frame / $totalframes )
+}
+
+
+$seconds: 20;
+$framerate: 20;
+$totalframes: $seconds * $framerate;
+
+
+@keyframes rgb {
+  #{f(0)} { color: blue; }
+  #{f(30)} { color: gray; }
+  #{f(60)} { color: lightgray; }
+  #{f($totalframes)} { color: white; }
+}
+
+
+.logoSpin {
+      animation: spin infinite 20s linear;
+      pointer-events: none;
+}
+
+.logoFlip {
+      animation: flip infinite 5s linear;
+      pointer-events: none;
+}
+
+.logoTurn {
+      animation: turn infinite 5s linear;
+      pointer-events: none;
+}
+
+.logoStatic {
+
+}
