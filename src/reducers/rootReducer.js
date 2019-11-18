@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import mainReducer from './mainReducer';
+import messageReducer from './messageReducer';
+import timerReducer from './timerReducer';
 
 export default combineReducers({
-	mainReducer
+	messageReducer,
+	timerReducer
 });

@@ -18,7 +18,7 @@ const setCookie = (key, value, cookies) => {
 }
 
 const setSeenCookieMessage = (cookies) => {
-        cookies.set(currentCookieId, 1, { path: '/' });
+        return setCookie(currentCookieId, 1, { path: '/' });
 }
 
 const getSeenCookieMessage = (cookies) => {
@@ -26,4 +26,4 @@ const getSeenCookieMessage = (cookies) => {
 }
 
 
-export default {getSeenCookieMessage, setSeenCookieMessage }
+export default {getSeenCookieMessage, setSeenCookieMessage}

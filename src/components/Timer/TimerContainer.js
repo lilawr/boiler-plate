@@ -1,17 +1,16 @@
 import { connect } from 'react-redux';
-import { start, pause, stop, createMessage } from 'actions/mainActions';
+import { start, togglePause, stop } from 'actions/timerActions';
 
 import Timer from './Timer.js';
 
 const mapDispatchToProps = dispatch => ({
-    addMessage: (text) => dispatch(createMessage(text)),
-	startClock: (titleToTrack) => dispatch(start(titleToTrack)),
-	pauseClock: () => dispatch(pause()),
-	stopClock: () => dispatch(stop())
+	start: (titleToTrack) => dispatch(start(titleToTrack)),
+	togglePause: () => dispatch(togglePause()),
+	stop: () => dispatch(stop())
 });
 
 const mapStateToProps = state => ({
-	...state.mainReducer
+	...state.timerReducer
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Timer);

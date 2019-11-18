@@ -21,13 +21,19 @@ import App from 'components/App';
 //import registerServiceWorker from './registerServiceWorker';
 
 const initialState = {
-	mainReducer:{
-		messages: [],
-		clockOn: false,
-		titleToTrack: ""
+	messageReducer:{
+		messages: []
+	},
+	timerReducer: {
+        taskName: '',
+        previousTaskName: '',
+        clockStart: 0,
+        lastPause: 0,
+        lastStart: 0,
+        totalTime: 0,
+        isPaused: false
 	}
 };
-
 
 ReactDOM.render(
     <CookiesProvider>

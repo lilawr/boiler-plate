@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
+import messages from 'utils/messages.json'
 import Message from 'elements/TextMessageBox';
 import ScrollBottomBox from 'elements/ScrollBottomBox';
 
@@ -17,14 +17,17 @@ class InputBox extends Component {
 
     static propTypes = {
        addMessage: PropTypes.func.isRequired,
-       start: PropTypes.func.isRequired,
-       stop: PropTypes.func.isRequired,
-       pause: PropTypes.func.isRequired,
-       messages: PropTypes.array.isRequired,
-       waitResponse: PropTypes.bool
+       messages: PropTypes.array.isRequired
     }
 
-    addInputMessage = () => {
+    componentDidMount() {
+        if(this.props.messages.length === 0) {
+            this.sendReplyMessage(messages.welcome);
+            this.sendReplyMessage(messages.menu);
+        }
+    }
+
+    addInputMessage = (input) => {
         if(this.state.input.length === 0) {
             return;
         }
@@ -38,13 +41,18 @@ class InputBox extends Component {
         })
     }
 
-    setInput = (event) => {
-        let input = event.target.value.toString();
-
-        this.setState({
-            input: input
-        });
+    sendReplyMessage = (message) => {
+        const messageObj = {text: message, type:"reply"};
+        this.props.addMessage(messageObj);
     }
+
+     setInput = (event) => {
+            let input = event.target.value.toString();
+
+            this.setState({
+                input: input
+            });
+        }
 
   render() {
 
@@ -62,7 +70,6 @@ class InputBox extends Component {
            <div className="submit-box" >
                <input
                className="input-text"
-               disabled={this.props.waitResponse}
                type="text"
                value={this.state.input}
                onKeyPress={(ev) => {
