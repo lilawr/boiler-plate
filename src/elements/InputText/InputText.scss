@@ -1,0 +1,23 @@
+@import "styles/base.scss";
+
+.submit-box {
+    display: flex;
+    align-items: stretch;
+    padding: $space-x-large $space-med;
+    background: rgba(213,213,213,0.1);
+    @include md {
+       padding: $space-med $space-base;
+    }
+}
+
+.input-text {
+    display:flex;
+    margin: $space-med;
+    flex: 1;
+    font-size: 1rem;
+    padding: $space-base;
+    @include sm {
+       padding: $space-small;
+       margin: $space-base;
+    }
+}

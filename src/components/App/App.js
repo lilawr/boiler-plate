@@ -14,7 +14,7 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            component: 'TIMER'
+            component: 'MESSAGES'
         }
     }
 
@@ -37,7 +37,9 @@ class App extends Component {
                 <header>
                     <TitleBar logo={logo} title="React Training DB" setComponent={this.setComponent} value={this.state.component}/>
                 </header>
-                {this.renderAppComponent()}
+                <div className="container">
+                    {this.renderAppComponent()}
+                </div>
                 <CookieManager cookies={this.props.cookies}/>
             </div>
 		);

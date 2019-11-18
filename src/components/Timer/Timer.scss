@@ -1,0 +1,30 @@
+@import "styles/base.scss";
+
+.Timer {
+     li {
+         list-style: none;
+         display: flex;
+         padding: $space-x-large $space-med;
+         @include md {
+            padding: $space-med $space-base;
+         }
+     }
+
+     .input-name {
+        max-width:80%;
+        width:80%;
+        min-width:300px;
+        margin: auto;
+        margin-top: $space-x-large;
+         @include md {
+            margin-top: $space-med $space-base;
+         }
+     }
+
+     label {
+         margin-top: $space-x-large;
+         @include md {
+             margin-top: $space-med $space-base;
+         }
+     }
+}
