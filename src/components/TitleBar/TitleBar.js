@@ -48,7 +48,7 @@ class TitleBar extends PureComponent {
 			<div className="TitleBar">
 				<SpinningLogo logo={logo} animate={this.state.animate} animationType='SPIN' classNames="TitleBarLogo"/>
                 <ColorText text={title} animate={this.state.animate} />
-                <button className="submit-default" onClick={this.toggleAnimation} >Animate</button>
+                <button className="submit-default" onClick={this.toggleAnimation} > {this.state.animate ? 'Freeze' : 'Animate'} </button>
                 <select value={this.state.value} onChange={this.handleChange}>
                     {Object.keys(components).map((k, i) => <option key={`option-${i}`} value={k}> {components[k].name} </option>)}
                 </select>
